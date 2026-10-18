@@ -47,7 +47,6 @@ hr{border:0;border-top:1px solid var(--l);margin:0}
 <h1>Как дважды выбрать «лучшую компанию» и дважды остаться с коробками на балконе?</h1>
 <p class="sub">Как за 40 минут научиться проверять любую сетевую компанию до оплаты, даже если вы не финансист и уже ошибались</p>
 <p><em>Пока одни зовут «заходи на старте», вы просите баланс.</em></p>
-<a class="btn" href="#form">ПРОДОЛЖИТЬ</a>
 </header>
 <main class="w">
 
@@ -109,7 +108,6 @@ hr{border:0;border-top:1px solid var(--l);margin:0}
 
 <section>
 <p>За 40 минут вы увидите на живом примере, как проверить любую сетевую компанию по 14 критериям и понять, паром это или лайнер, до того как заплатите первый доллар. Вы получите таблицу, по которой сами проверите компанию, которую сейчас рассматриваете. Даже если вы уже дважды остались с коробками на балконе. Даже если вы не финансист и никогда не открывали отчёт.</p>
-<a class="btn" href="#form">ПРОДОЛЖИТЬ</a>
 </section>
 
 <section>
@@ -130,7 +128,6 @@ hr{border:0;border-top:1px solid var(--l);margin:0}
 <p>Я тестирую этот формат в группе, и мне нужны живые вопросы от людей, которые уже прошли через несколько компаний.</p>
 <p>$9 меньше, чем одна лишняя коробка, которую вы взяли не потому что нужно, а потому что «так положено для статуса».</p>
 <p>Беру в группу не больше 15 человек. Дата и время: [ДАТА И ВРЕМЯ].</p>
-<a class="btn" href="#form">ПРОДОЛЖИТЬ</a>
 </div>
 </section>
 
@@ -160,16 +157,8 @@ hr{border:0;border-top:1px solid var(--l);margin:0}
 <section id="form">
 <h2>Как попасть</h2>
 <p>1. Нажмите кнопку «ПРОДОЛЖИТЬ»<br>2. Ответьте на 3 вопроса: в каких компаниях были, какую рассматриваете, что для вас главное<br>3. Оплатите $9 и получите ссылку на мастер-класс</p>
-<form id="f" novalidate>
-<label for="n">Ваше имя</label><input id="n" name="name" required>
-<label for="c">Telegram или e-mail для связи</label><input id="c" name="contact" required>
-<label for="a">В каких компаниях были?</label><textarea id="a" name="was" rows="3"></textarea>
-<label for="r">Какую компанию рассматриваете сейчас?</label><input id="r" name="now">
-<label for="m">Что для вас главное?</label><textarea id="m" name="main" rows="3"></textarea>
-<button class="btn" type="submit">ПРОДОЛЖИТЬ</button>
-<div class="small">Оплата $9 на следующем шаге.</div>
-<p id="ok" hidden style="margin-top:16px;font-weight:700;color:var(--b)">Спасибо, мы свяжемся с вами</p>
-</form>
+<!-- TODO: заменить href на ссылку на телеграм-бота (например, https://t.me/ВАШ_БОТ) -->
+<a class="btn" href="#">ПРОДОЛЖИТЬ</a>
 </section>
 
 <section>
@@ -177,16 +166,5 @@ hr{border:0;border-top:1px solid var(--l);margin:0}
 </section>
 </main>
 <footer><div class="w">Мастер-класс не обещает дохода и не является финансовой рекомендацией.</div></footer>
-<script>
-document.getElementById('f').addEventListener('submit',function(e){
-  e.preventDefault();
-  var n=document.getElementById('n'),c=document.getElementById('c');
-  if(!n.value.trim()){n.focus();n.reportValidity&&(n.setCustomValidity('Укажите имя'),n.reportValidity(),n.setCustomValidity(''));return}
-  if(!c.value.trim()){c.focus();c.setCustomValidity('Укажите Telegram или e-mail');c.reportValidity();c.setCustomValidity('');return}
-  // TODO: здесь подключить платёжную ссылку (например: window.location.href = 'https://ВАША-ССЫЛКА-НА-ОПЛАТУ';)
-  // и/или отправку данных формы на ваш сервер/бот.
-  document.getElementById('ok').hidden=false;
-});
-</script>
 </body>
 </html>
